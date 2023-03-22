@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public abstract class State {
-    private static final Logger logger = LogManager.getLogger();
+    protected static final Logger logger = LogManager.getLogger();
 
     private int t;
 
@@ -18,6 +18,7 @@ public abstract class State {
     public final State tick(Cat cat) {
         t++;
         cat.tick();
+        logger.info("tick()");
         return this;
     }
 

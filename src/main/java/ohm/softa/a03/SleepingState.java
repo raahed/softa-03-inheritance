@@ -7,6 +7,7 @@ public class SleepingState extends State {
 
     @Override
     State successor(Cat cat) {
-        return null;
+        logger.info("Yoan... getting hungry!");
+        return new HungryState(cat.getAwake());
     }
 }
