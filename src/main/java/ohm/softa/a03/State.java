@@ -17,8 +17,8 @@ public abstract class State {
 
     public final State tick(Cat cat) {
         t++;
-        cat.tick();
         logger.info("tick()");
+        logger.info(this.getClass().getSimpleName());
         return this;
     }
 
