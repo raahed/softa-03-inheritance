@@ -8,11 +8,11 @@ public class HungryState extends State {
     @Override
     State successor(Cat cat) {
         logger.info("I've starved for a too long time...good bye...");
-        return new DeathState(0);
+        return new DeathState();
     }
 
     State feed(Cat cat) {
         logger.info("You feed the cat...");
-        return new DigestingState(cat.getDigest());
+        return new DigestingState(cat.getDigest(), this.getDuration() - this.getTime());
     }
 }

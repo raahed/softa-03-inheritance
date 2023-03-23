@@ -20,10 +20,7 @@ public class Cat {
 	}
 
 	public void tick(){
-		currentState.tick(this);
-
-		if(currentState.getDuration() == currentState.getTime())
-			currentState = currentState.successor(this);
+		currentState = currentState.tick(this);
 	}
 
 	/**

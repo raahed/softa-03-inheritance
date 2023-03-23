@@ -10,16 +10,17 @@ public abstract class State {
 
     private final int duration;
 
-    // Maybe unused
     public State(int duration) {
         this.duration = duration;
     }
 
     public final State tick(Cat cat) {
         t++;
+
         logger.info("tick()");
         logger.info(this.getClass().getSimpleName());
-        return this;
+
+        return duration > t ? this : successor(cat);
     }
 
     abstract State successor(Cat cat);
